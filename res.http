@@ -1,0 +1,17 @@
+POST http://localhost:4000/register
+Content-Type: application/json
+ 
+{
+    "email":"ganga@gmail.com",
+    "password":"ganga770240",
+    "mobile":"+916301264228"
+}
+ 
+###
+POST http://localhost:4000/verify-otp
+Content-Type: application/json
+ 
+{
+    "email":"gangadharalothula@gmail.com",
+    "otp":"957415"
+}
