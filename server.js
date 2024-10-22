@@ -14,15 +14,15 @@ app.use(bodyParser.json());
 app.use(cors())
  
 // MongoDB Atlas connection
-mongoose.connect("mongodb+srv://gangadharalothula7702:taskotp123@taskotp.aofvo.mongodb.net/").then(() => {
+mongoose.connect(process.env.OPENAI_API_KEY).then(() => {
     console.log('Connected to MongoDB Atlas');
 }).catch(err => {
     console.error('Failed to connect to MongoDB Atlas', err);
 });
  
-const TWILIO_ACCOUNT_SID="AC49d6e198d3fe21605e0b14ebdec8d682"
-const TWILIO_AUTH_TOKEN="b227f0fcf0ce5021bdbf80e7344e92d3"
-const TWILIO_PHONE_NUMBER="+16612147563"
+const TWILIO_ACCOUNT_SID=process.env.TWILIO_ACCOUNT_SID
+const TWILIO_AUTH_TOKEN=process.env.TWILIO_AUTH_TOKEN
+const TWILIO_PHONE_NUMBER=process.env.TWILIO_PHONE_NUMBER
  
 // Twilio setup
 const twilioClient = twilio(TWILIO_ACCOUNT_SID,TWILIO_AUTH_TOKEN);
